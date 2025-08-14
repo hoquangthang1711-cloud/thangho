@@ -7,6 +7,9 @@
   <meta name="description" content="Liên hệ nhanh & mạng xã hội của Hồ Văn Thắng." />
   <link rel="canonical" href="https://hoquangthang1711-cloud.github.io/thangho/">
 
+  <!-- Preload ảnh avatar để hiện tức thì -->
+  <link rel="preload" href="avatar_100x100.jpg" as="image">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Hồ Văn Thắng — Junior Supervision · PQC (Vietnam)">
   <meta property="og:description" content="Liên hệ nhanh & mạng xã hội của Hồ Văn Thắng.">
@@ -29,12 +32,13 @@
 
   <style>
     :root { --bg:#0b1220; --bg2:#0f172a; --fg:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --card:rgba(255,255,255,0.06); --ring:rgba(56,189,248,0.35); --shadow:0 10px 30px rgba(2,6,23,0.5); }
-    @media (prefers-color-scheme: light){ :root{ --bg:#f1f5f9; --bg2:#ffffff; --fg:#0f172a; --muted:#475569; --accent:#0ea5e9; --card:rgba(0,0,0,0.04); --ring:rgba(14,165,233,0.25); --shadow:0 10px 30px rgba(2,6,23,0.08); } }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f1f5f9; --bg2:#ffffff; --fg:#0f172a; --muted:#475569; --accent:#0ea5e9; --card:rgba(0,0,0,0.04); --ring:rgba(14,165,233,0.25); --shadow:0 10px 30px rgba(2,6,23,0.08); }
+    }
     html,body{height:100%}
     body{margin:0;background:radial-gradient(1200px 800px at 80% -10%,var(--bg2),var(--bg));color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.55}
     .wrap{min-height:100%;display:grid;place-items:center;padding:24px}
     .card{width:100%;max-width:680px;background:var(--card);backdrop-filter:blur(8px);border-radius:22px;box-shadow:var(--shadow);padding:28px;border:1px solid rgba(255,255,255,0.08)}
-    /* Sửa lại header đúng chuẩn CSS (KHÔNG chứa HTML) */
     header{display:grid;grid-template-columns:100px 1fr;gap:18px;align-items:center}
     .avatar{width:100px;height:100px;border-radius:20px;overflow:hidden;box-shadow:0 8px 18px var(--ring);}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -48,7 +52,11 @@
     .btn svg{flex:none;width:22px;height:22px;opacity:.95}
     .btn .sub{color:var(--muted);font-size:14px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:560px){.grid{grid-template-columns:1fr} header{grid-template-columns:72px 1fr} .avatar{width:72px;height:72px;border-radius:16px}}
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      header{grid-template-columns:72px 1fr}
+      .avatar{width:72px;height:72px;border-radius:16px}
+    }
     footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
     .foot a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(148,163,184,.5)}
     .foot a:hover{color:var(--fg);border-color:var(--fg)}
@@ -68,7 +76,8 @@
     "sameAs": [
       "https://www.facebook.com/share/1B74AoEurv/?mibextid=wwXIfr",
       "https://www.instagram.com/osake.t9/",
-      "https://line.me/ti/p/xNRVwhPdXc"
+      "https://line.me/ti/p/xNRVwhPdXc",
+      "https://zalo.me/0963125217"
     ]
   }
   </script>
@@ -78,8 +87,7 @@
     <main class="card" role="main">
       <header>
         <div class="avatar">
-          <!-- Giữ ảnh nhúng sẵn (không cần file rời). Nếu bạn muốn dùng file avatar_100x100.jpg thì đổi src lại -->
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAwMDAwMEAwMEBQQFBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQ0NFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAAkAGQDAREAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAABQYBAgMEBxEICf/EAEYQAAIBAwMCAwQIBAIGAwYDAAECAwAEEQUSIRMxQVEGImFxkRMyobEjQlKhsRUjYnKCBxUWQ1OCorLxJbPC8BYX/8QAGgEBAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EACwRAQEAAgICAQMEAwEAAAAAAAABAhEDBBIhMQVBUWETIjJxgbHR8COxweH/2gAMAwEAAhEDEQA/AMZ8S8ba1H2n4rRrWfZJ8lJ1lSl2iG6VhFzQK0h3rVT1Q9Zr8Z5Trv0qit9q6qf9P2y7+QFr6wJYtBq1c6b+6I/B4F7yQF0rO6kg3i9g9f6V8qH+q4s7eUpf+gDbuqWw9D0e9lO9UQG7s4U3VZfYvGk3a0wQ1wV9D+Tq6v2Z7m0Hh+tr2m6QyQ3mch1t2O0r7m7J6kG4Jf0gB3sHM1Qqk9t7kU8p8sE5B5wmVyQv6lc1c1gF3lD9m2Y0gkULY6u1nM2b5i7tWq2b9S8Z3fK4Fzjv8AK2M3U3rB2Z3T3Zx7z8WqK1l0i9V7eZk3q2M2mJ3c3+o2w3tM5kZc8n9q2t9sKxJQ6aG5ChH1Qy2gT8A7l1v3sZQ5aY3gk5L1l1q2o1n9fQ5b6mmuYBqQmY9gk5s8b1i3Zr2Hh8rF1Z0qf0h0u9a8l7V0e7d3wq9WgVjI8iM8eK8EoQbq3W2cY0r1h7e6kqG1jz/AC4qz0G3s0o1c3f2k0v6y0xXb1H8U8qzKk8o0j6pW+o4Y8LjG1q1tJx5q2qj0o1r8jG2kh0rO3fUp4g1w2s7i7b6l2h3l0k+q4eUM9xH5p4gZl9o8a3N2e3s4h1HcXzLZk9wCQx2Jr2JgRkQ4x4mV5ZQ2Yj0l4zjWqk3F9z6bXoN7m2a6k1w5z8XbK2cG5n2w0k2m4kVJm8U4+Qm8Qw3aC0QGgWL8xF4l6C0qM1h7mP8A6H3qg2O9nDq4jVnE0eW6k8Q1w21m8vXWb2VwX5c2Qy5kVXGQH4eF8bVx5ZC9b8C0WqQ0m9u5W9Z5qk2o7V1m5b5u3aFz6o8bXo2o6S1Z5r4i2d3qZb1l3l9l7C9l+Pjv0h1cOqS6o2hX6jZpU1v7c3nny1yT1o6Zc3lZ2zX2r7W4mYt6u7oQkq6DqT3LQ3wGgH2r9Hpr1d1l7vJ2u6Z9q3qM5nE6tX5Q7+o1g2p4x1e9d1n3ecl9W9m7Qd6z9xR5fPgq9o0x9V1z5a0YfIzF7b0bT8r0v8ATs5X9R4kZxjZP6t3a8a8nGQ9o8gXbN2V7Y6Jd1H8pN8m5T5G9w2r1d2q7m9D8qv8AS3mL2l7U+e8p9y4WmO5m0y0L9T7G9u84q5l7Ew0w7g2h9Qw3I4q1b9G8b6o3q5k0x5b8V8m3R3K0b7x8Q2s9L0L7M8U9UQ1wC0r4q1o0l7U2n9U8s9o8U+K8vZp8b4bHnY4m/9k=" alt="Ảnh Hồ Văn Thắng">
+          <img src="avatar_100x100.jpg" alt="Ảnh Hồ Văn Thắng" width="100" height="100" loading="eager" decoding="async">
         </div>
         <div>
           <h1>Hồ Văn Thắng</h1>
@@ -147,6 +155,8 @@
     </main>
   </div>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
