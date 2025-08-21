@@ -1,9 +1,10 @@
+```html
 <!doctype html>
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hồ Văn Thắng — Junior Supervision · PQC (Vietnam)</title>
+  <title>Hồ Văn Thắng — Junior Supervisor · PQC (Vietnam)</title>
   <meta name="description" content="Liên hệ nhanh & mạng xã hội của Hồ Văn Thắng." />
   <link rel="canonical" href="https://hoquangthang1711-cloud.github.io/thangho/">
 
@@ -11,7 +12,7 @@
   <link rel="preload" href="avatar_100x100.jpg" as="image">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Hồ Văn Thắng — Junior Supervision · PQC (Vietnam)">
+  <meta property="og:title" content="Hồ Văn Thắng — Junior Supervisor · PQC (Vietnam)">
   <meta property="og:description" content="Liên hệ nhanh & mạng xã hội của Hồ Văn Thắng.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hoquangthang1711-cloud.github.io/thangho/">
@@ -22,7 +23,7 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hồ Văn Thắng — Junior Supervision · PQC (Vietnam)">
+  <meta name="twitter:title" content="Hồ Văn Thắng — Junior Supervisor · PQC (Vietnam)">
   <meta name="twitter:description" content="Liên hệ nhanh & mạng xã hội của Hồ Văn Thắng.">
   <meta name="twitter:image" content="https://hoquangthang1711-cloud.github.io/thangho/og.jpg">
 
@@ -61,6 +62,15 @@
     .foot a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(148,163,184,.5)}
     .foot a:hover{color:var(--fg);border-color:var(--fg)}
     .sep{opacity:.4}
+
+    /* Invoice section */
+    .section-title{margin:26px 0 8px;font-weight:700;font-size:16px;color:var(--muted);letter-spacing:.3px}
+    .copy-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 16px}
+    .copy-row .label{font-weight:600}
+    .copy-row .value{color:var(--fg);opacity:.95;word-break:break-word}
+    .copy-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:var(--fg);border-radius:10px;padding:8px 10px;cursor:pointer}
+    .copy-btn:hover{background:rgba(255,255,255,0.08)}
+    .copy-btn svg{width:18px;height:18px}
   </style>
 
   <!-- JSON-LD -->
@@ -148,7 +158,43 @@
         </a>
       </section>
 
-      <footer>
+      <!-- THÔNG TIN XUẤT HÓA ĐƠN -->
+      <h2 class="section-title">Thông tin xuất hóa đơn</h2>
+
+      <div class="copy-row">
+        <div>
+          <div class="label">Tên công ty</div>
+          <div class="value">Công ty TNHH Pacific Quality Control Centre Viet Nam</div>
+        </div>
+        <button class="copy-btn" onclick="copyCompany(this)" aria-label="Sao chép tên công ty">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          <span>Sao chép</span>
+        </button>
+      </div>
+
+      <div class="copy-row" style="margin-top:12px">
+        <div>
+          <div class="label">Mã số thuế (MST)</div>
+          <div class="value">0312197023</div>
+        </div>
+        <button class="copy-btn" onclick="copyTax(this)" aria-label="Sao chép mã số thuế">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          <span>Sao chép</span>
+        </button>
+      </div>
+
+      <div class="copy-row" style="margin-top:12px">
+        <div>
+          <div class="label">Địa chỉ xuất hóa đơn</div>
+          <div class="value">Tầng 05, Tòa nhà Miss Áo Dài, 21 Nguyễn Trung Ngạn, Phường Sài Gòn, TP Hồ Chí Minh, Việt Nam.</div>
+        </div>
+        <button class="copy-btn" onclick="copyAddress(this)" aria-label="Sao chép địa chỉ xuất hóa đơn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 16H8V7h11v14Z"/></svg>
+          <span>Sao chép</span>
+        </button>
+      </div>
+
+      <footer style="margin-top:22px">
         <div class="foot">© <span id="y"></span> Hồ Văn Thắng</div>
         <div class="foot"><a href="#" onclick="navigator.clipboard.writeText(location.href);this.textContent='Đã copy liên kết ✓';return false;">Sao chép liên kết</a></div>
       </footer>
@@ -156,7 +202,34 @@
   </div>
 
   <script>
+    // Năm hiện tại
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Tiện ích: hiển thị "Đã copy ✓" tạm thời
+    function flash(btn){
+      const t = btn.querySelector('span');
+      const old = t.textContent;
+      t.textContent = 'Đã copy ✓';
+      btn.disabled = true;
+      setTimeout(()=>{ t.textContent = old; btn.disabled = false; }, 1500);
+    }
+
+    // Copy helpers theo yêu cầu (không khoảng trắng đầu/cuối)
+    function copyCompany(btn){
+      const v = 'Công ty TNHH Pacific Quality Control Centre Viet Nam'.trim();
+      navigator.clipboard.writeText(v).then(()=>flash(btn));
+    }
+    function copyTax(btn){
+      // Chỉ copy số
+      const raw = '0312197023';
+      const digitsOnly = (raw + '').replace(/\D+/g,'').trim();
+      navigator.clipboard.writeText(digitsOnly).then(()=>flash(btn));
+    }
+    function copyAddress(btn){
+      const v = 'Tầng 05, Tòa nhà Miss Áo Dài, 21 Nguyễn Trung Ngạn, Phường Sài Gòn, TP Hồ Chí Minh, Việt Nam.'.trim();
+      navigator.clipboard.writeText(v).then(()=>flash(btn));
+    }
   </script>
 </body>
 </html>
+```
